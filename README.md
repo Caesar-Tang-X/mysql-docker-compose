@@ -16,7 +16,7 @@
 ##  安装及生成数据路径：
     ├── mysql 
         ├── conf                        配置文件目录
-            └── my.cnf                  mysql 配置文件
+            └── mysql.cnf                  mysql 配置文件
         ├── data                        数据目录
         ├── log                         日志目录
         ├── docker-compose.yml          docker-compose.yml
