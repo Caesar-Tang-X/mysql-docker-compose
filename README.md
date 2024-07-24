@@ -38,4 +38,14 @@
 ### 1. 容器启动时提示忽略配置文件
     mysql: [Warning] World-writable config file '/etc/mysql/conf.d/mysql.cnf' is ignored
 
+#### （1）问题原因
+    MySQL 发现挂载的配置文件 /etc/mysql/conf.d/my.cnf 具有全局可写权限，因此忽略了该文件
 
+#### （2）解决方案
+    Windows：
+        右键 mysql.cnf 文件，勾选只读
+
+    Linux：
+        进入容器：docker exec -it mysql-8.0 /bin/bash
+        修改文件权限：chmod 644 /etc/mysql/conf.d/mysql.cnf
+        重启容器：docker restart mysql-8.0
